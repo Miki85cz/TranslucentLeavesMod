@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Apache-2.0 license http://www.apache.org/licenses/LICENSE-2.0"
+
+[[mods]]
+modId="translucentleaves"
+version="1.0.0"
+displayName="Translucent Leaves"
+authors="Miki85cz"
+description="Makes vanilla leaves behave like air for light, letting sunlight and sky light reach the forest floor while removing ugly leaf-shadow artifacts. Works in singleplayer, dedicated servers, and multiplayer with optional client-side enhancement."
+
+[[mixins]]
+config="translucentleaves.mixins.json"
+
+[[dependencies.translucentleaves]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.67,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.translucentleaves]]
+modId="minecraft"
+type="required"
+versionRange="[1.21,)"
+ordering="NONE"
+side="BOTH"

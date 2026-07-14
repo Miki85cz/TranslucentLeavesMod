@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = '1.0.0'
+group = 'cz.miki85.translucentleaves'
+
+base {
+    archivesName = 'translucentleaves'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+neoForge {
+    version = '21.1.235'
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.logging.console.level', 'debug'
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.logging.console.level', 'debug'
+        }
+    }
+
+    mods {
+        translucentleaves {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    // Additional dependencies (like JEI or other API mods) can go here if needed
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// Automatically populates metadata into your neoforge.mods.toml
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            mod_id      : 'translucentleaves',
+            mod_name    : 'Translucent Leaves',
+            mod_version : version,
+            mod_authors : 'miki85'
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}

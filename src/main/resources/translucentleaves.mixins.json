@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "cz.miki85.translucentleaves.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LeavesBlockOpacityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
