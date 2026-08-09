@@ -13,7 +13,7 @@ Translucent Leaves is a lightweight NeoForge utility mod for Minecraft 1.21.1+ t
 ## Compatibility
 - Platform: NeoForge
 - Minecraft version: 1.21.1+
-- License: Apache-2.0
+- License: All Rights Reserved
 
 ## Running locally
 - Run `./gradlew runClient` for singleplayer testing.
