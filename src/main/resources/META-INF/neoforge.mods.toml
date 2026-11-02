@@ -4,10 +4,10 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="translucentleaves"
-version="1.2.0"
+version="1.2.1"
 displayName="Translucent Leaves"
 authors="Miki85cz"
-description="Makes blocks with #minecraft:leaves tag behave like air for sunlight, letting it reach the forest floor. Works in singleplayer and on dedicated servers."
+description="Makes leaves behave like air for sunlight, letting it reach the forest floor. Works in singleplayer and on dedicated servers."
 
 [[mixins]]
 config="translucentleaves.mixins.json"
