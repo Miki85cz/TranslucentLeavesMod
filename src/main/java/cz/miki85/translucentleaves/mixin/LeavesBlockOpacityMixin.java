@@ -13,6 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(BlockBehaviour.BlockStateBase.class)
 public abstract class LeavesBlockOpacityMixin {
 
+    @Inject(method = "useShapeForLightOcclusion", at = @At("HEAD"), cancellable = true)
+    private void disableShapeLightOcclusion(CallbackInfoReturnable<Boolean> cir) {
+        BlockState state = (BlockState) (Object) this;
+        if (LeafLightCompat.shouldApply(state.getBlock())) {
+            cir.setReturnValue(false);
+        }
+    }
+
     @Inject(method = "getLightBlock", at = @At("HEAD"), cancellable = true)
     private void forceZeroOpacity(BlockGetter level, BlockPos pos, CallbackInfoReturnable<Integer> cir) {
         BlockState state = (BlockState) (Object) this;

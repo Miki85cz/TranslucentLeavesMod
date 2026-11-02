@@ -5,7 +5,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.141'
 }
 
-version = '1.1.0'
+version = '1.2.0'
 group = 'cz.miki85.translucentleaves'
 
 base {
@@ -58,7 +58,7 @@ tasks.withType(ProcessResources).configureEach {
             mod_id      : 'translucentleaves',
             mod_name    : 'Translucent Leaves',
             mod_version : version,
-            mod_authors : 'miki85'
+            mod_authors : 'Miki85cz'
     ]
     inputs.properties replaceProperties
 

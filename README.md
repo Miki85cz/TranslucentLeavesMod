@@ -1,12 +1,13 @@
 
 # Translucent Leaves
 
-Translucent Leaves is a lightweight NeoForge utility mod for Minecraft 1.21.1+ that makes vanilla leaves behave like air for the light engine. This allows sunlight and sky light to pass through trees, brightening forest floors and removing the dark canopy effect that normally suppresses crops and encourages hostile mob spawns.
+Translucent Leaves is a lightweight NeoForge utility mod for Minecraft 1.21.1+ that makes blocks in the `#minecraft:leaves` block tag and snow layers on top of those leaves behave like air for the light engine. This allows sunlight and sky light to pass through trees, brightening forest floors and removing the dark canopy effect that normally suppresses crops and encourages hostile mob spawns.
 
 ## Features
-- Lets sunlight and sky light pass through vanilla leaves.
+- Lets sunlight and sky light pass through leaves in the `#minecraft:leaves` tag and snow layers.
 - Helps crops, saplings, and grass grow under dense tree cover.
 - Reduces dark leaf-shadow artifacts on the client.
+- Clears persisted chunk lightmaps as server chunks load, allowing the light engine to recalculate without reloading chunks.
 - Works in singleplayer, dedicated servers, and multiplayer.
 - Requires no custom block overrides and uses Mixins for compatibility.
 
@@ -19,4 +20,3 @@ Translucent Leaves is a lightweight NeoForge utility mod for Minecraft 1.21.1+ t
 - Run `./gradlew runClient` for singleplayer testing.
 - Run `./gradlew runServer` for a local dedicated server test.
 - Run `./gradlew build` to produce the mod jar.
-
